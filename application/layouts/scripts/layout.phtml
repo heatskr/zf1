@@ -1,0 +1,108 @@
+<?php echo $this->doctype(), PHP_EOL ?>
+<html lang="<?php echo $this->translate()->getLocale() ?>">
+  <head>
+<?php
+echo $this->headTitle()->setIndent(4), PHP_EOL;
+echo $this->headMeta()
+  ->appendName('viewport', 'width=device-width, initial-scale=1')
+  ->setIndent(4), PHP_EOL;
+echo $this->headLink()
+  ->appendStylesheet('//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css')
+  ->appendStylesheet('//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css')
+  ->appendStylesheet($this->baseUrl('application.css'))
+  ->setIndent(4), PHP_EOL;
+echo $this->headStyle()->setIndent(4), PHP_EOL;
+echo $this->headScript()
+  ->appendFile('//code.jquery.com/jquery-1.10.2.min.js')
+  ->appendFile('//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js')
+  ->appendFile($this->baseUrl('application.js'))
+  ->setIndent(4), PHP_EOL;
+?>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="<?php echo $this->baseUrl('')?>">
+              <?php echo 'Brand' ?>
+            </a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <ul class="nav navbar-nav">
+            <?php foreach ($this->navigation()->getContainer() as $page) : ?>
+              <?php echo $this->menuItem($page) ?>
+            <?php endforeach ?>
+            </ul>
+
+<!--
+            <form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+-->
+
+            <ul class="nav navbar-nav navbar-right">
+            <?php if (Zend_Auth::getInstance()->hasIdentity()) : ?>
+              <li><a href="#"><?php echo $this->translate('Dashboard') ?></a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <?php echo Zend_Auth::getInstance()->getIdentity()->username ?>
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="#">Account</a>
+                  </li>
+                  <li>
+                    <a href="#">Settings</a>
+                  </li>
+                  <li class="divider"></li>
+                  <li>
+                    <a href="<?php echo $this->url(array(
+                      'module' => 'default',
+                      'controller' => 'users',
+                      'action' => 'sign-out'
+                    )) ?>">
+                      <?php echo $this->translate('Sign Out') ?>
+                    </a>
+                  </li>
+                <?php else : ?>
+                  <li>
+                    <a href="<?php echo $this->url(array(
+                      'module' => 'default',
+                      'controller' => 'users',
+                      'action' => 'sign-in'
+                    )) ?>">
+                      <?php echo $this->translate('Sign In') ?>
+                    </a>
+                  </li>
+                <?php endif ?>
+                </ul>
+              </li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+
+      <div class="container">
+        <?php echo $this->layout()->content ?>
+      </div>
+    </div>
+    <div id="inline=script">
+      <?php echo $this->inlineScript() ?>
+    </div>
+  </body>
+</html>

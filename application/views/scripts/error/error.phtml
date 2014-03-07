@@ -1,0 +1,9 @@
+<h1><?php echo $this->translate('Error') ?></h1>
+<p class="lead">
+  <?php echo $this->exception->getMessage() ?>
+</p>
+<address>
+  <strong><?php echo $this->exception->getFile() ?></strong> :
+  <?php echo $this->exception->getLine() ?>
+</address>
+<pre><?php echo $this->exception->getTraceAsString() ?></pre>

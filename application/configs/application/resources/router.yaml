@@ -1,0 +1,29 @@
+production:
+  # resources:
+  #   router:
+  #     routes:
+  #       route_1_id:
+  #         route: /login
+  #         defaults:
+  #           module: admin
+  #           controller: user
+  #           action: login
+  #       route_2_id:
+  #         route: /user/:user_id
+  #         defaults:
+  #           module: admin
+  #           controller: user
+  #           action: edit
+  #           reqs:
+  #             user_id: ^\d+$
+  #     # Optionally you can also set a Chain Name Separator:
+  #     chainNameSeparator: _
+
+staging:
+  _extends: production
+
+testing:
+  _extends: production
+
+development:
+  _extends: production

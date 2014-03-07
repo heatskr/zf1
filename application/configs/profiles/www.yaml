@@ -1,0 +1,52 @@
+production:
+  extensions:
+    - zf1
+  resources:
+    navigation:
+      pages:
+        home:
+          label: Home
+          controller: index
+          resource: default:index
+        products:
+          label: Products
+          controller: products
+          resource: default:products
+          pages:
+            show_product:
+              label: Show Product
+              controller: products
+              resource: default:products
+              privilege: show
+        services:
+          label: Services
+          controller: services
+          resource: default:services
+        about:
+          label: About
+          controller: about
+          resource: default:about
+        contact:
+          label: Contact
+          controller: contact
+          resource: default:contact
+
+    acl:
+      roles:
+        -
+          name: guest
+      permissions:
+        -
+          type: allow
+          role: null
+          resource: null
+          privilege: null
+
+staging:
+  _extends: production
+
+testing:
+  _extends: production
+
+development:
+  _extends: production

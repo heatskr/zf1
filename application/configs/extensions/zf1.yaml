@@ -1,0 +1,25 @@
+production:
+  autoloaderNamespaces:
+    - Zf1_
+  pluginpaths:
+    Zf1_Bootstrap_Resource: Zf1/Bootstrap/Resource
+  resources:
+    frontController:
+      plugins:
+        acl: Zf1_Plugin_Acl
+      actionHelperPaths:
+        Zf1_Helper: Zf1/Helper
+    authAdapter:
+      tableName: users
+      identityColumn: username
+      credentialColumn: password
+      credentialTreatment: SHA1(?)
+
+staging:
+  _extends: production
+
+testing:
+  _extends: production
+
+development:
+  _extends: production

@@ -1,0 +1,22 @@
+production:
+  resources:
+    db:
+      # adapter: pdo_pgsql
+      # params:
+      #   host: localhost
+      #   username: zf1
+      #   password: "zf1"
+      #   dbname: zf1
+      isDefaultTableAdapter: true
+      # Optionally you can also the cache template to
+      # use for metadata caching:
+      defaultMetadataCache: database
+
+staging:
+  _extends: production
+
+testing:
+  _extends: production
+
+development:
+  _extends: production

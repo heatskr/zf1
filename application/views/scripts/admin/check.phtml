@@ -1,0 +1,58 @@
+<table class="table" border="0" cellspacing="0" cellpadding="0">
+  <colgroup>
+    <col/>
+    <col width="1"/>
+    <col width="1"/>
+    <col width="1"/>
+    <col width="1"/>
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Action</th>
+      <th>PG</th>
+      <th>FS</th>
+      <th>DB</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+  <?php foreach ($this->actions as $resource => $privileges) : ?>
+    <tr>
+      <th colspan="5"><?php echo $resource ?></th>
+    </tr>
+    <?php foreach ($privileges as $privilege => $data) : ?>
+    <?php
+    if ($data['fs'] && $data['db']) {
+      $className = 'bg-success';
+    } elseif ($data['fs'] && !$data['db']) {
+      $className = 'bg-warning';
+    } else {
+      $className = 'bg-danger';
+    }
+    ?>
+    <tr class="<?php echo $className ?>">
+      <td><?php echo $privilege ?></td>
+      <td><span class="<?php echo false ?
+        'glyphicon glyphicon-ok' :
+        'glyphicon glyphicon-remove' ?>"></span></td>
+      <td><span class="<?php echo $data['fs'] ?
+        'glyphicon glyphicon-ok' :
+        'glyphicon glyphicon-remove' ?>"></span></td>
+      <td><span class="<?php echo $data['db'] ?
+        'glyphicon glyphicon-ok' :
+        'glyphicon glyphicon-remove' ?>"></span></td>
+      <td>
+        <?php if ($data['fs'] && !$data['db']) : ?>
+        <a class="action-sync glyphicon glyphicon-refresh" href="<?php echo $this
+        ->url(array(
+          'action' => 'sync',
+          'r' => $resource,
+          'p' => $privilege
+        ))?>"></a>
+        <?php endif ?>
+      </td>
+    </tr>
+    <?php endforeach ?>
+  <?php endforeach ?>
+  </tbody>
+</table>

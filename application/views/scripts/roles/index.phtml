@@ -1,0 +1,37 @@
+<div>
+  <a href="<?php echo $this->newPath() ?>" class="btn btn-default">
+    <span class="glyphicon glyphicon-plus"></span>
+    <?php echo $this->translate('New') ?>
+  </a>
+</div>
+<table class="table" border="0" cellspacing="0" cellpadding="0">
+  <thead>
+    <tr>
+      <th><?php echo $this->translate('Name') ?></th>
+      <th><?php echo $this->translate('Parent') ?></th>
+      <th colspan="2">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+  <?php foreach ($this->rowset as $row) : ?>
+    <tr>
+      <td><?php echo $this->translate()->getTranslator()
+        ->isTranslated($row->name) ? $this->translate($row->name) :
+        $row->name ?></td>
+      <td><?php echo ($parent = $row->getParent()) ? (
+        $this->translate()->getTranslator()->isTranslated($row->name) ?
+        $this->translate($row->name) : $row->name) : '' ?></td>
+      <td>
+        <a href="<?php echo $this->editPath($row->id) ?>">
+          <span class="glyphicon glyphicon-pencil"></span>
+        </a>
+      </td>
+      <td>
+        <a href="<?php echo $this->destroyPath($row->id) ?>">
+          <span class="glyphicon glyphicon-trash"></span>
+        </a>
+      </td>
+    </tr>
+  <?php endforeach ?>
+  </tbody>
+</table>

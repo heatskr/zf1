@@ -1,0 +1,14 @@
+# Always load the Dojo javascript files
+production:
+  # resources:
+  #   dojo:
+  #     enable: true
+
+staging:
+  _extends: production
+
+testing:
+  _extends: production
+
+development:
+  _extends: production

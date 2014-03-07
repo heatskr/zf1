@@ -1,0 +1,14 @@
+production:
+  resources:
+    layout:
+      layout: layout
+      layoutPath: APPLICATION_PATH/layouts/scripts
+
+staging:
+  _extends: production
+
+testing:
+  _extends: production
+
+development:
+  _extends: production

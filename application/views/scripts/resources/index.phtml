@@ -1,0 +1,35 @@
+<div>
+  <a href="<?php echo $this->newPath() ?>" class="btn btn-default">
+    <span class="glyphicon glyphicon-plus"></span>
+    <?php echo $this->translate('New') ?>
+  </a>
+</div>
+<table class="table" border="0" cellspacing="0" cellpadding="0">
+  <thead>
+    <tr>
+    <?php foreach ($this->info['cols'] as $col) : ?>
+      <th><?php echo $this->translate(Zf1_Util_String::humanize($col)) ?></th>
+    <?php endforeach ?>
+      <th colspan="2">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+  <?php foreach ($this->rowset as $row) : ?>
+    <tr>
+    <?php foreach ($row as $col) : ?>
+      <td><?php echo $col ?></td>
+    <?php endforeach ?>
+      <td>
+        <a href="<?php echo $this->editPath($row->id) ?>">
+          <span class="glyphicon glyphicon-pencil"></span>
+        </a>
+      </td>
+      <td>
+        <a href="<?php echo $this->destroyPath($row->id) ?>">
+          <span class="glyphicon glyphicon-trash"></span>
+        </a>
+      </td>
+    </tr>
+  <?php endforeach ?>
+  </tbody>
+</table>

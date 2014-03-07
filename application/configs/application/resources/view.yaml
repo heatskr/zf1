@@ -1,0 +1,17 @@
+production:
+  resources:
+    view:
+      encoding: UTF-8
+      basePath: APPLICATION_PATH/views/
+      doctype: HTML5
+      contentType: text/html; charset=UTF-8
+      charset: UTF-8
+
+staging:
+  _extends: production
+
+testing:
+  _extends: production
+
+development:
+  _extends: production

@@ -1,0 +1,34 @@
+production:
+  config:
+    - APPLICATION_PATH/configs/application/php-settings.yaml
+    - APPLICATION_PATH/configs/application/include-paths.yaml
+    - APPLICATION_PATH/configs/application/autoloader-namespaces.yaml
+    - APPLICATION_PATH/configs/application/appnamespace.yaml
+    - APPLICATION_PATH/configs/application/bootstrap.yaml
+    - APPLICATION_PATH/configs/application/plugin-paths.yaml
+    - APPLICATION_PATH/configs/application/resources/cache-manager.yaml
+    - APPLICATION_PATH/configs/application/resources/db.yaml
+    - APPLICATION_PATH/configs/application/resources/dojo.yaml
+    - APPLICATION_PATH/configs/application/resources/front-controller.yaml
+    - APPLICATION_PATH/configs/application/resources/layout.yaml
+    - APPLICATION_PATH/configs/application/resources/locale.yaml
+    - APPLICATION_PATH/configs/application/resources/log.yaml
+    - APPLICATION_PATH/configs/application/resources/mail.yaml
+    - APPLICATION_PATH/configs/application/resources/modules.yaml
+    - APPLICATION_PATH/configs/application/resources/multidb.yaml
+    - APPLICATION_PATH/configs/application/resources/navigation.yaml
+    - APPLICATION_PATH/configs/application/resources/router.yaml
+    - APPLICATION_PATH/configs/application/resources/session.yaml
+    - APPLICATION_PATH/configs/application/resources/translate.yaml
+    - APPLICATION_PATH/configs/application/resources/user-agent.yaml
+    - APPLICATION_PATH/configs/application/resources/view.yaml
+    - APPLICATION_PATH/configs/sites/APPLICATION_NAME.yaml
+
+staging:
+  _extends: production
+
+testing:
+  _extends: production
+
+development:
+  _extends: production

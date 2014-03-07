@@ -1,0 +1,19 @@
+production:
+  # resources:
+  #   navigation:
+  #     pages:
+  #       home:
+  #         label: Home
+  #         controller: index
+  #         resource: default:index
+  #         action: index
+  #         privilege: index
+
+staging:
+  _extends: production
+
+testing:
+  _extends: production
+
+development:
+  _extends: production

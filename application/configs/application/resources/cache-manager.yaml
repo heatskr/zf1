@@ -1,0 +1,41 @@
+production:
+  resources:
+    cachemanager:
+      database:
+        frontend:
+          name: Core
+          customFrontendNaming: false
+          options:
+            lifetime: 7200
+          options:
+            automatic_serialization: true
+        backend:
+          name: File
+          customBackendNaming: false
+          options:
+            cache_dir: APPLICATION_PATH/../data/cache
+        frontendBackendAutoload: false
+      languages:
+        _extends: database
+        frontend:
+          name: Core
+          customFrontendNaming: false
+          options:
+            lifetime: 7200
+          options:
+            automatic_serialization: true
+        backend:
+          name: File
+          customBackendNaming: false
+          options:
+            cache_dir: APPLICATION_PATH/../data/cache
+        frontendBackendAutoload: false
+
+staging:
+  _extends: production
+
+testing:
+  _extends: production
+
+development:
+  _extends: production

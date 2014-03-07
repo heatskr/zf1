@@ -1,0 +1,13 @@
+# Additional paths to prepend to the include_path.
+# Should be an array of paths.
+production:
+  includePaths:
+    library: APPLICATION_PATH/../library
+staging:
+  _extends: production
+
+testing:
+  _extends: production
+
+development:
+  _extends: production

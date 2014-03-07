@@ -1,0 +1,25 @@
+production:
+  # resources:
+  #   mail:
+  #     transport:
+  #       type: smtp
+  #       host: smtp.example.com
+  #       auth: login
+  #       username: myUsername
+  #       password: myPassword
+  #       register: true # True by default
+  #     defaultFrom:
+  #       email: john@example.com
+  #       name: John Doe
+  #     defaultReplyTo:
+  #       email: Jane@example.com
+  #       name: Jane Doe
+
+staging:
+  _extends: production
+
+testing:
+  _extends: production
+
+development:
+  _extends: production

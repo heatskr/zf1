@@ -1,0 +1,16 @@
+production:
+  resources:
+    locale:
+      default: en_US
+      # force: true
+      # # Optionally you can also the cache template to use for caching:
+      cache: locale
+
+staging:
+  _extends: production
+
+testing:
+  _extends: production
+
+development:
+  _extends: production

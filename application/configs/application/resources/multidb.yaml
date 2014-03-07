@@ -1,0 +1,25 @@
+production:
+  # resources:
+  #   multidb:
+  #     db1:
+  #       adapter: pdo_mysql
+  #       host: localhost
+  #       username: webuser
+  #       password: "XXXX"
+  #       dbname: db1
+  #     db2:
+  #       adapter: pdo_pgsql
+  #       host: example.com
+  #       username: dba
+  #       password: "notthatpublic"
+  #       dbname: db2
+  #       default: true
+
+staging:
+  _extends: production
+
+testing:
+  _extends: production
+
+development:
+  _extends: production

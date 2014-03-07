@@ -1,0 +1,37 @@
+<h3>Zend Framework 1.12</h3>
+<pre>
+$ git clone grupus/zf1.git
+$ cd zf1
+$ make
+</pre>
+<pre>
+  zf create project example
+
+  view sourceprint?
+  cd example
+  zf create module default
+  zf create module admin
+  zf create controller Index -m default
+  zf create controller Index -m admin
+</pre>
+<h3>Apache 2</h3>
+<pre>
+&lt;VirtualHost&gt;
+  ServerName: example.com
+  DocumentRoot: /path/to/zf1/public
+  &lt;Directory /path/to/zf1/public &gt;
+    Allow from all
+  &lt;/Directory&gt;
+&lt;/VirtualHost&gt;
+</pre>
+<h3>Rails</h3>
+<pre>
+$ rvm use ruby-2.0.0
+$ rvm gemset create accounts
+$ rvm use @accounts
+$ gem install rails -v 2.0.0
+$ rails new accounts --database=pgsql -T
+$ cd accounts
+$ bundle install
+$ bundle exec rails server
+</pre>

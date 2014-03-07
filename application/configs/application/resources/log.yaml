@@ -1,0 +1,25 @@
+production:
+  resources:
+    log:
+      stream:
+        writerName: Stream
+        writerParams:
+          stream: APPLICATION_PATH/../data/logs/APPLICATION_NAME-APPLICATION_ENV.log
+          mode: a
+        filterName: Priority
+        filterParams:
+          priority: 4
+
+staging:
+  _extends: production
+
+testing:
+  _extends: production
+
+development:
+  _extends: production
+  resources:
+    log:
+      stream:
+        filterParams:
+          priority: 7

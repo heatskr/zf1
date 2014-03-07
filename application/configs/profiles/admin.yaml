@@ -1,0 +1,50 @@
+production:
+  extensions:
+    - zf1
+  resources:
+    navigation:
+      pages:
+        admmin:
+          label: Administration
+          controller: admin
+          resource: admin
+          pages:
+            users:
+              label: Users
+              controller: users
+              resource: admin
+              privilege: users
+            roles:
+              label: Roles
+              controller: roles
+              resource: admin
+              privilege: roles
+            permissions:
+              label: Permissions
+              controller: permissions
+              resource: admin
+              privilege: permissions
+    acl:
+      roles:
+        - guest
+        - member
+        - manager member
+        - admin
+      resources:
+        - users
+      rules:
+        - add allow admin
+        - add deny admin users sign-in
+        - add deny member users sign-in
+        - add allow guest users sign-in
+        - add allow member users sign-out
+        - add allow manager admin permissions
+
+staging:
+  _extends: production
+
+testing:
+  _extends: production
+
+development:
+  _extends: production

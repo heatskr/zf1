@@ -1,0 +1,29 @@
+production:
+  resources:
+    frontController:
+      controllerDirectory: APPLICATION_PATH/controllers
+      moduleControllerDirectoryName: controllers
+      moduleDirectory: APPLICATION_PATH/modules
+      defaultControllerName: index
+      defaultAction: index
+      defaultModule: default
+      baseUrl: /
+      # plugins:
+      #   foo: My_Plugin_Foo
+      returnresponse: 0
+      env: APPLICATION_ENV
+      # actionHelperPaths:
+      #   My_Helper: My/Helper
+
+staging:
+  _extends: production
+
+testing:
+  _extends: production
+
+development:
+  _extends: production
+  resources:
+    frontController:
+      params:
+        displayExceptions: true

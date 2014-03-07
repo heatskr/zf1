@@ -1,0 +1,31 @@
+production:
+  resources:
+    translate:
+      adapter: gettext
+      # clear: FALSE
+      # Optionally you can also the cache template to use for caching:
+      cache: languages
+      content: APPLICATION_PATH/../data/locales
+      # disableNotices: FALSE
+      # ignore: .
+      locale: auto
+      # log: NULL
+      # logMessage: "Untranslated message within '%locale%': %message%"
+      # logPriority: 5
+      # logUntranslated: FALSE
+      # reload: FALSE
+      # route: NULL
+      scan: directory
+      # tag: Zend_Translate
+
+staging:
+  _extends: production
+
+testing:
+  _extends: production
+
+development:
+  _extends: production
+  resources:
+    translate:
+      logUntranslated: TRUE

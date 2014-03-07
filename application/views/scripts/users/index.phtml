@@ -1,0 +1,43 @@
+<div>
+  <a href="<?php echo $this->newPath() ?>" class="btn btn-default">
+    <span class="glyphicon glyphicon-plus"></span>
+    <?php echo $this->translate('New') ?>
+  </a>
+</div>
+<table class="table" border="0" cellspacing="0" cellpadding="0">
+  <thead>
+    <tr>
+      <th><?php echo $this->translate('Username') ?></th>
+      <th><?php echo $this->translate('Roles') ?></th>
+      <th colspan="2">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+  <?php foreach ($this->rowset as $row) : ?>
+    <tr>
+      <td><?php echo $row->username ?></td>
+      <td>
+      <?php
+      $roles = array_map(function($role) {
+        return $role['name'];
+      }, $row->getRoles()->toArray());
+      foreach ($roles as $key => $value) {
+        $roles[$key] = $this->translate($value);
+      }
+      echo implode(', ', $roles);
+      ?>
+      </td>
+      <td>
+        <a href="<?php echo $this->editPath($row->id) ?>">
+          <span class="glyphicon glyphicon-pencil"></span>
+        </a>
+      </td>
+      <td>
+        <a href="<?php echo $this->destroyPath($row->id) ?>">
+          <span class="glyphicon glyphicon-trash"></span>
+        </a>
+      </td>
+    </tr>
+  <?php endforeach ?>
+  </tbody>
+</table>

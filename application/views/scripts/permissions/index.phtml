@@ -1,0 +1,64 @@
+<table class="table table-condensed table-responsive" border="0" cellspacing="0" cellpadding="0">
+  <colgroup>
+    <col/>
+    <col/>
+    <col width="1"/>
+    <col width="1"/>
+    <col width="1"/>
+    <col width="1"/>
+  <?php foreach ($this->roles as $role) : ?>
+    <col width="1"/>
+  <?php endforeach ?>
+  </colgroup>
+  <thead>
+    <tr>
+      <th><?php echo $this->translate('Label') ?></th>
+      <th><?php echo $this->translate('Title') ?></th>
+      <th><?php echo $this->translate('File') ?></th>
+      <th><?php echo $this->translate('Menu') ?></th>
+      <th><?php echo $this->translate('Resource') ?></th>
+      <th><?php echo $this->translate('Privilege') ?></th>
+    <?php foreach ($this->roles as $role) : ?>
+      <th><?php echo $this->translate($role) ?></th>
+    <?php endforeach ?>
+    </tr>
+  </thead>
+  <tbody>
+  <?php foreach ($this->actions as $controller => $actions) : ?>
+  <?php foreach ($actions as $action => $info) : ?>
+  <?php
+  $allowed = (
+    !$this->navigation()->getAcl()->has($controller) ||
+    $this->navigation()->getAcl()->isAllowed($role, $controller, $action)
+  );
+  $file = $info['file'] ? 'ok' : 'remove';
+  $menu = $info['menu'] ? 'ok' : 'remove';
+  $tr =  ($info['file'] && $info['menu']) ? '' : 'warning';
+  ?>
+    <tr class="<?php echo $tr ?>">
+      <td><?php echo empty($info['label']) ? '' :
+        $this->translate($info['label']) ?></td>
+      <td><?php echo empty($info['title']) ? '' :
+        $this->translate($info['title']) ?></td>
+      <td class="text-center">
+        <span class="glyphicon glyphicon-<?php echo $file ?>"></span>
+      </td>
+      <td class="text-center">
+        <span class="glyphicon glyphicon-<?php echo $menu ?>"></span>
+      </td>
+      <td><?php echo $controller ?></td>
+      <td><?php echo $action ?></td>
+    <?php foreach ($this->roles as $role) : ?>
+      <td class="text-center">
+      <?php echo $this->formCheckbox('perm', true, array(
+        'data-c' => $controller,
+        'data-a' => $action,
+        'checked' => $allowed
+      )) ?>
+      </td>
+    <?php endforeach ?>
+    <?php endforeach ?>
+    </tr>
+  <?php endforeach ?>
+  </tbody>
+</table>

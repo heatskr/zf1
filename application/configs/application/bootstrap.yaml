@@ -1,0 +1,14 @@
+# Either the string path to the bootstrap class, or an array with elements
+# for the 'path' and 'class' for the application bootstrap.
+production:
+  bootstrap:
+    path: APPLICATION_PATH/Bootstrap.php
+    class: Bootstrap
+staging:
+  _extends: production
+
+testing:
+  _extends: production
+
+development:
+  _extends: production

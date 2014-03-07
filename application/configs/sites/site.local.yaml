@@ -1,0 +1,20 @@
+production:
+  profiles:
+    - www
+  resources:
+    db:
+      adapter: pdo_mysql
+      params:
+        host: localhost
+        username: zend
+        password: "zend"
+        dbname: zend
+
+staging:
+  _extends: production
+
+testing:
+  _extends: production
+
+development:
+  _extends: production

@@ -1,0 +1,29 @@
+production:
+  session:
+    save_path: APPLICATION_PATH/../data/session
+    use_only_cookies: true
+    remember_me_seconds: 864000
+    saveHandler:
+      class: Zend_Session_SaveHandler_DbTable
+      options:
+        name: session
+        primary:
+          0: session_id
+          1: save_path
+          2: name
+        primaryAssignment:
+          0: sessionId
+          1: sessionSavePath
+          2: sessionName
+        modifiedColumn: modified
+        dataColumn: session_data
+        lifetimeColumn: lifetime
+
+staging:
+  _extends: production
+
+testing:
+  _extends: production
+
+development:
+  _extends: production

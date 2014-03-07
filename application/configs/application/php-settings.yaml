@@ -1,0 +1,20 @@
+production:
+  phpSettings:
+    display_startup_errors: false
+    display_errors: false
+
+staging:
+  _extends: production
+
+testing:
+  _extends: production
+  phpSettings:
+    display_startup_errors: true
+    display_errors: true
+
+development:
+  _extends: production
+  phpSettings:
+    display_startup_errors: true
+    display_errors: true
+    error_reporting: 32767
