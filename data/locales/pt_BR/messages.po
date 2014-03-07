@@ -1,0 +1,140 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: zend\n"
+"POT-Creation-Date: 2014-02-15 15:47-0300\n"
+"PO-Revision-Date: 2014-02-19 17:05-0300\n"
+"Last-Translator: Giovanni Oliveira <giovanni.oliveira@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _;translate\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Language: pt_BR\n"
+"X-Poedit-SearchPath-0: /Users/giovanni/Sites/zend\n"
+
+msgid "Home"
+msgstr "Início"
+
+msgid "View front page."
+msgstr "Ver página inicial"
+
+msgid "Sign In"
+msgstr "Entrar"
+
+msgid "Access sign in form."
+msgstr "Acessar formulário de login."
+
+msgid "Sign Out"
+msgstr "Sair"
+
+msgid "Destroy current session."
+msgstr "Finalizar sessão atual."
+
+msgid "Contact"
+msgstr "Contato"
+
+msgid "Send contact messages."
+msgstr "ENviar mensagens de contato."
+
+msgid "Permissions"
+msgstr "Permissões"
+
+msgid "Grant permissions to users."
+msgstr "Conceder permissões aos usuários."
+
+msgid "Label"
+msgstr "Rótulo"
+
+msgid "Description"
+msgstr "Descrição"
+
+msgid "Resource"
+msgstr "Recurso"
+
+msgid "Privilege"
+msgstr "Privilégio"
+
+msgid "guest"
+msgstr "convidado"
+
+msgid "member"
+msgstr "membro"
+
+msgid "manager"
+msgstr "gerente"
+
+msgid "admin"
+msgstr "administrador"
+
+msgid "Really delete this record?"
+msgstr "Deseja realmente excluir este registro?"
+
+msgid "This action can not be undone."
+msgstr "Essa ação não pode ser desfeita."
+
+msgid "Dashboard"
+msgstr "Painel"
+
+msgid "Administration"
+msgstr "Administração"
+
+msgid "Save"
+msgstr "Salvar"
+
+msgid "Id"
+msgstr "Código"
+
+msgid "Name"
+msgstr "Nome"
+
+msgid "Roles"
+msgstr "Papéis"
+
+msgid "Users"
+msgstr "Usuários"
+
+msgid "Pages"
+msgstr "Páginas"
+
+msgid "Actions"
+msgstr "Ações"
+
+msgid "Controllers"
+msgstr "Controladores"
+
+msgid "Modules"
+msgstr "Módulos"
+
+msgid "New"
+msgstr "Novo"
+
+msgid "File"
+msgstr "Arquivo"
+
+msgid "Menu"
+msgstr "Menu"
+
+msgid "Username"
+msgstr "Usuário"
+
+msgid "Password"
+msgstr "Senha"
+
+msgid "Error"
+msgstr "Erro"
+
+msgid "Parent"
+msgstr "Superior"
+
+msgid "Delete record"
+msgstr "Apagar registro"
+
+msgid "Title"
+msgstr "Título"
+
+msgid "Send"
+msgstr "Enviar"
